@@ -11,6 +11,7 @@ cocktail_list["drinks"].map do |drink|
 end
 
 
+
 #spirits
 light_rum = Ingredient.create(name: "Light Rum", alcohol?: true)
 bourbon = Ingredient.create(name: "Bourbon", alcohol?: true)
@@ -67,7 +68,7 @@ DrinkIngredient.create(drink_id: 1, ingredient: light_rum, quantity: "2-3 oz ")
 DrinkIngredient.create(drink_id: 1, ingredient: lime, quantity: "Juice of 1 ")
 DrinkIngredient.create(drink_id: 1, ingredient: sugar, quantity: "2 tsp ")
 DrinkIngredient.create(drink_id: 1, ingredient: mint, quantity:"2-4")
-DrinkIngredient.create(drink_id: 1, ingredient: soda_water, quantity: nil)
+DrinkIngredient.create(drink_id: 1, ingredient: soda_water, quantity: "2-3 oz")
 #old fashion
 DrinkIngredient.create(drink_id: 2, ingredient: bourbon, quantity: "4.5 cL")
 DrinkIngredient.create(drink_id: 2, ingredient: angostura_bitter, quantity: "2 dashes")
@@ -102,7 +103,7 @@ DrinkIngredient.create(drink_id: 7, ingredient: powdered_sugar, quantity: "1 tsp
 DrinkIngredient.create(drink_id: 8, ingredient: tequila, quantity: "1 1/2 oz ")
 DrinkIngredient.create(drink_id: 8, ingredient: triple_sec, quantity: "1/2 oz ")
 DrinkIngredient.create(drink_id: 8, ingredient: lime_juice, quantity: "1 oz ")
-DrinkIngredient.create(drink_id: 8, ingredient: salt, quantity: nil)
+DrinkIngredient.create(drink_id: 8, ingredient: salt, quantity: "On the rim")
 #manhattan
 DrinkIngredient.create(drink_id: 9, ingredient: sweet_vermouth, quantity: "3/4 oz")
 DrinkIngredient.create(drink_id: 9, ingredient: bourbon, quantity: "2 1/2 oz Blended")
@@ -136,12 +137,12 @@ DrinkIngredient.create(drink_id: 14, ingredient: lemon_peel, quantity: "1 twist"
 DrinkIngredient.create(drink_id: 15, ingredient: gin, quantity: "1/2 oz")
 DrinkIngredient.create(drink_id: 15, ingredient: creme_de_cacao, quantity: "1/2 oz white")
 DrinkIngredient.create(drink_id: 15, ingredient: light_cream, quantity: "2 oz")
-DrinkIngredient.create(drink_id: 15, ingredient: nutmeg, quantity: nil)
+DrinkIngredient.create(drink_id: 15, ingredient: nutmeg, quantity: "Garnish")
 #Brandy Alexander
 DrinkIngredient.create(drink_id: 16, ingredient: brandy, quantity: "1 oz")
 DrinkIngredient.create(drink_id: 16, ingredient: creme_de_cacao, quantity: "1 oz")
 DrinkIngredient.create(drink_id: 16, ingredient: light_cream, quantity: "1 oz")
-DrinkIngredient.create(drink_id: 16, ingredient: nutmeg, quantity: nil)
+DrinkIngredient.create(drink_id: 16, ingredient: nutmeg, quantity: "Garnish")
 #Alfie Cocktail
 DrinkIngredient.create(drink_id: 17, ingredient: lemon_vodka, quantity: "1 1/2 oz")
 DrinkIngredient.create(drink_id: 17, ingredient: triple_sec, quantity: "1 dash")
@@ -160,6 +161,3 @@ DrinkIngredient.create(drink_id: 19, ingredient: lemon_peel, quantity: "1 twist"
 DrinkIngredient.create(drink_id: 20, ingredient: dry_vermouth, quantity: "1 oz")
 DrinkIngredient.create(drink_id: 20, ingredient: gin, quantity: "1 oz")
 DrinkIngredient.create(drink_id: 20, ingredient: kummel, quantity: "1/2 tsp")
-
-
-

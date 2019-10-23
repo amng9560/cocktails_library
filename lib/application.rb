@@ -26,14 +26,13 @@ class Application
 
         choice = "Pick your poison!"
 
-        output = ["Vodka",
-        #system("imgcat ./lib/pics/Vodka.jpeg"),  
+        output = ["Vodka",  
                     "Gin", 
                 "Whiskey", 
                 "Tequila", 
                     "Rum", 
                 "Vermouth", 
-                    "Others"]
+                    "Exit"]
 
         response = @@prompt.select(choice, output)
         case response
@@ -56,7 +55,19 @@ class Application
                 system "clear"
                 Drink.vermouth
             else
-                "Look at the list and choose from there please."
+                system "clear"
+                exit_option
         end
     end
+
+    def self.exit_option
+        response = @@prompt.select("Would you like to return to the main Menu?", ["Yes", "No"])
+        if response == "Yes"
+            system "clear"
+            menu
+        else
+            system "clear"
+            abort ("Thank you for visiting the Cocktail Library!")
+        end
+    end    
 end
