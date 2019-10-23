@@ -8,4 +8,6 @@ ActiveRecord::Base.logger = nil
 system "clear"
 Application.age_confirmation
 system "clear"
+Application.enter_username
+system "clear"
 Application.menu

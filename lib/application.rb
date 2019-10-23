@@ -1,7 +1,7 @@
 class Application
 
     @@prompt = TTY::Prompt.new
-
+    @@username = nil
     def self.tty_prompt
         @@prompt
     end
@@ -21,6 +21,17 @@ class Application
         end
     end
 
+
+      
+    def self.enter_username
+        puts 'Enter Username'
+        @@username = gets.chomp
+    end
+
+   
+
+   
+   
     def self.menu
         tty_prompt
 
