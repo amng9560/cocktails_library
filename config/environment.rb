@@ -4,7 +4,8 @@ require "sqlite3"
 require "pry"
 require 'tty-prompt'
 require "rest-client"
-require "paint"
+require 'colorize'
+require 'colorized_string'
 
 require_all "lib"
 

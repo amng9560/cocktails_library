@@ -34,7 +34,7 @@ class Application
                 "Vermouth", 
                     "Exit"]
 
-        response = @@prompt.select(choice, output)
+        response = @@prompt.select(choice, output, active_color: :cyan)
         case response
             when "Vodka"
                 system "clear"
@@ -61,7 +61,8 @@ class Application
     end
 
     def self.exit_option
-        response = @@prompt.select("Would you like to return to the main Menu?", ["Yes", "No"])
+        option = ["Yes", "No"]
+        response = @@prompt.select("Would you like to return to the main Menu?", option, active_color: :red)
         if response == "Yes"
             system "clear"
             menu

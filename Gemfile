@@ -16,4 +16,5 @@ gem "sinatra-activerecord", "~> 2.0"
 gem "activerecord", "~> 6.0"
 
 gem "rest-client", "~> 2.1"
-gem "paint"
+# gem "paint"
+gem "colorize"
