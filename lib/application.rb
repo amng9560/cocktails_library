@@ -1,7 +1,9 @@
 class Application
 
     @@prompt = TTY::Prompt.new
+
     @@username = nil
+
     def self.tty_prompt
         @@prompt
     end
@@ -13,29 +15,24 @@ class Application
     
         if response == "Yes"
             system "clear"
-            puts "Come look at our cocktail selection!!!"
         else 
             system "clear"
             puts "You're not old enough!"
             exit
         end
     end
-
-
       
     def self.enter_username
         puts 'Enter Username'
         @@username = gets.chomp
     end
 
-   
-
-   
-   
     def self.menu
         tty_prompt
 
-        choice = "Pick your poison!"
+        puts "Come look at our cocktail selection!!!"
+
+        choice = "Pick your poison!".green
 
         output = ["Vodka",  
                     "Gin", 
@@ -69,7 +66,7 @@ class Application
                 Drink.vermouth
             when "Recommended"
                 system "clear"
-                puts Drink.pluck(&:name).sample(5)
+                puts Drink.all.map(&:name).sample(5)
                 puts ""
                 exit_option
             else
