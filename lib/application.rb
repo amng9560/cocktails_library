@@ -26,8 +26,7 @@ class Application
 
         choice = "Pick your poison!"
 
-        output = ["Vodka",
-        #system("imgcat ./lib/pics/Vodka.jpeg"),  
+        output = ["Vodka",  
                     "Gin", 
                 "Whiskey", 
                 "Tequila", 
@@ -39,6 +38,7 @@ class Application
         case response
             when "Vodka"
                 system "clear"
+                system("imgcat ./lib/pics/Vodka.jpeg")
                 Drink.vodka
             when "Gin"
                 system "clear"
