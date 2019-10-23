@@ -11,4 +11,3 @@ system "clear"
 Application.enter_username
 system "clear"
 Application.menu
-

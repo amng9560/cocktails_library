@@ -8,6 +8,7 @@ class Drink < ActiveRecord::Base
   end
 
   def self.ingredients_and_quantity(selected_drink)
+    puts "Ingredients and amounts:".light_yellow
     instances = DrinkIngredient.all.select{|drink| drink.drink.name == selected_drink}
     instances.map{|drink| drink.quantity + " " + drink.ingredient.name}
   end
@@ -27,9 +28,9 @@ class Drink < ActiveRecord::Base
     selection = select_spirit_and_name("odka")
     choice = "Here are your choices!"
 
-    #system("imgcat ../pics/Vodka.jpeg")
-
     system "clear"
+
+    # system("imgcat ../pics/Vodka.jpeg")
 
     response = @@prompt.select(choice, selection, active_color: :bright_blue)
     case response
