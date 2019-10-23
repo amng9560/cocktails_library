@@ -12,12 +12,17 @@ class Drink < ActiveRecord::Base
     instances.map{|drink| drink.quantity + " " + drink.ingredient.name}
   end
 
+  def self.select_spirit_and_name(spirit_name)
+    spirit = DrinkIngredient.all.select{|drink| drink.ingredient.name.include?(spirit_name) && drink.ingredient.alcohol? == true}
+    spirit.map{|drink_name| drink_name.drink.name}
+  end
+
   def self.vodka
-    vodka_drink = DrinkIngredient.all.select{|drink| drink.ingredient.name.include?("odka")}
-    selection = vodka_drink.map{|drink_name| drink_name.drink.name}
+    selection = select_spirit_and_name("odka")
     choice = "Here are your choices!"
 
-    # imgcat("../pics/Vodka.jpeg")
+    # system("imgcat ../pics/Vodka.jpeg")
+
     system "clear"
 
     response = @@prompt.select(choice, selection)
@@ -32,11 +37,12 @@ class Drink < ActiveRecord::Base
         system "clear"
         puts ingredients_and_quantity("Alfie Cocktail")
     end
+    puts ""
+    Application.exit_option
   end
 
   def self.gin
-    gin = DrinkIngredient.all.select{|drink| drink.ingredient.name.include?("Gin") && drink.ingredient.alcohol? == true}
-    selection = gin_drink.map{|drink_name| drink_name.drink.name}
+    selection = select_spirit_and_name("Gin")
     choice = "Here are your choices!"
 
     system "clear"
@@ -64,11 +70,12 @@ class Drink < ActiveRecord::Base
         system "clear"
         puts ingredients_and_quantity("Allies Cocktail")
     end
+    puts ""
+    Application.exit_option
   end
 
   def self.tequila
-    tequila_drink = DrinkIngredient.all.select{|drink| drink.ingredient.name.include?("Tequila")}
-    selection = tequila_drink.map{|drink_name| drink_name.drink.name}
+    selection = select_spirit_and_name("Tequila")
     choice = "Here are your choices!"
 
     system "clear"
@@ -81,11 +88,12 @@ class Drink < ActiveRecord::Base
         system "clear"
         puts ingredients_and_quantity("Margarita")
     end
+    puts ""
+    Application.exit_option
   end
 
   def self.vermouth
-    vermouth_drink = DrinkIngredient.all.select{|drink| drink.ingredient.name.include?("Vermouth")}
-    selection = vermouth_drink.map{|drink_name| drink_name.drink.name}
+    selection = select_spirit_and_name("Vermouth")
     choice = "Here are your choices!"
 
     system "clear"
@@ -110,11 +118,12 @@ class Drink < ActiveRecord::Base
         system "clear"
         puts ingredients_and_quantity("Allies Cocktail")
     end
+    puts ""
+    Application.exit_option
   end
 
   def self.rum
-    rum_drink = DrinkIngredient.all.select{|drink| drink.ingredient.name.include?("Light Rum")}
-    selection = rum_drink.map{|drink_name| drink_name.drink.name}
+    selection = select_spirit_and_name("Light Rum")
     choice = "Here are your choices!"
 
     system "clear"
@@ -130,6 +139,8 @@ class Drink < ActiveRecord::Base
         system "clear"
         puts ingredients_and_quantity("Manhattan")
     end
+    puts ""
+    Application.exit_option
   end
 
   def self.whiskey
@@ -143,9 +154,9 @@ class Drink < ActiveRecord::Base
     response = @@prompt.select(choice, selection)
 
     case response
-      when "Old Fashion"
+      when "Old Fashioned"
         system "clear"
-        puts ingredients_and_quantity("Old Fashion")
+        puts ingredients_and_quantity("Old Fashioned")
       when "Whiskey Sour"
         system "clear"
         puts ingredients_and_quantity("Whiskey Sour")
@@ -171,5 +182,7 @@ class Drink < ActiveRecord::Base
         system "clear"
         puts ingredients_and_quantity("Allegheny")
     end
+    puts ""
+    Application.exit_option
   end
 end

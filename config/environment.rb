@@ -4,12 +4,11 @@ require "sqlite3"
 require "pry"
 require 'tty-prompt'
 require "rest-client"
+require "paint"
 
 require_all "lib"
 
-ActiveRecord::Base.logger = nil
+# ActiveRecord::Base.logger = nil
 
 # binding.pry
 # 0
-
-# cocktail_list["drinks"].map{|drink| drink["strIngredient1"]}
