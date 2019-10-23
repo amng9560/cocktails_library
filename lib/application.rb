@@ -31,13 +31,15 @@ class Application
                 "Whiskey", 
                 "Tequila", 
                     "Rum", 
-                "Vermouth", 
+                "Vermouth",
+                "Recommended", 
                     "Exit"]
 
         response = @@prompt.select(choice, output, active_color: :cyan)
         case response
             when "Vodka"
                 system "clear"
+                # system("imgcat ./pics/alexander.jpg")
                 Drink.vodka
             when "Gin"
                 system "clear"
@@ -54,6 +56,11 @@ class Application
             when "Vermouth"
                 system "clear"
                 Drink.vermouth
+            when "Recommended"
+                system "clear"
+                puts Drink.pluck(&:name).sample(5)
+                puts ""
+                exit_option
             else
                 system "clear"
                 exit_option

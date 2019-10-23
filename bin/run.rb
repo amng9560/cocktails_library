@@ -9,4 +9,3 @@ system "clear"
 Application.age_confirmation
 system "clear"
 Application.menu
-
