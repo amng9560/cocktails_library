@@ -319,4 +319,14 @@ class Drink < ActiveRecord::Base
     puts ""
     Application.exit_option
   end
+
+  def self.starting_music
+    pid = fork{exec 'afplay', "./news.mp3"}
+  end
+
+  def self.stop_music
+    pid = fork{exec 'killall', "afplay"}
+    sleep(0.01)
+  end
+  
 end

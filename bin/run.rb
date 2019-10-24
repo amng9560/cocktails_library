@@ -5,6 +5,7 @@ require_all "lib"
 
 ActiveRecord::Base.logger = nil
 
+Drink.starting_music
 system "clear"
 Application.age_confirmation
 system "clear"

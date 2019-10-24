@@ -18,6 +18,7 @@ class Application
         else 
             system "clear"
             puts "You're not old enough!"
+            Drink.stop_music
             exit
         end
     end
@@ -89,6 +90,7 @@ class Application
         response = @@prompt.select("Would you like to exit the Cocktail Librabry?", option, active_color: :red)
         if response == "Yes"
             system "clear"
+            Drink.stop_music
             abort ("Thank you for visiting the Cocktail Library!")
         else
             system "clear"
