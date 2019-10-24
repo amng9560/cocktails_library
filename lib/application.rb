@@ -61,23 +61,22 @@ class Application
         response = @@prompt.select("Pick your poison!".green, output, active_color: :cyan)
         case response
             when "Vodka"
-                system "clear"
-                system("imgcat ./pics/Vodka.jpeg")
+                #system("imgcat ./lib/pics/vodka.png")
                 Drink.vodka
             when "Gin"
-                system "clear"
+                #system("imgcat ./lib/pics/gin.png")
                 Drink.gin
             when "Whiskey"
-                system "clear"
+                #system("imgcat ./lib/pics/whiskey.jpg")
                 Drink.whiskey
             when "Tequila"
-                system "clear"
+                #system("imgcat ./lib/pics/tequila.png")
                 Drink.tequila
             when "Rum"
-                system "clear"
+                #system("imgcat ./lib/pics/rum.png")
                 Drink.rum
             when "Vermouth"
-                system "clear"
+                #system("imgcat ./lib/pics/vermouth.png")
                 Drink.vermouth
             else
                 system "clear"
@@ -93,7 +92,7 @@ class Application
             abort ("Thank you for visiting the Cocktail Library!")
         else
             system "clear"
-            main_menu
+            main_page
         end
     end
 end
