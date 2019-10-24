@@ -10,4 +10,6 @@ Application.age_confirmation
 system "clear"
 Application.enter_username
 system "clear"
-Application.menu
+start_animation
+system "clear"
+Application.main_page
