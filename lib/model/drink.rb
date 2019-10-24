@@ -1,4 +1,5 @@
 class Drink < ActiveRecord::Base
+  has_many :drink_ingredient
   has_many :ingredient, through: :drink_ingredient
 
   @@prompt = TTY::Prompt.new
@@ -24,6 +25,66 @@ class Drink < ActiveRecord::Base
     spirit.map{|drink_name| drink_name.drink.name}
   end
 
+  def self.long_island_tea
+    puts ingredients_and_quantity("Long Island Tea")
+    puts ""
+    puts instructions("Long Island Tea")
+  end
+
+  def self.negroni
+    puts ingredients_and_quantity("Negroni")
+    puts ""
+    puts instructions("Negroni")
+  end
+  
+  def self.dry_martini
+    puts ingredients_and_quantity("Dry Martini")
+    puts ""
+    puts instructions("Dry Martini")
+  end
+
+  def self.alabama_slammer
+    puts ingredients_and_quantity("Alabama Slammer")
+    puts ""
+    puts instructions("Alabama Slammer")
+  end
+
+  def self.margarita
+    puts ingredients_and_quantity("Margarita")
+    puts ""
+    puts instructions("Margarita")
+  end
+
+  def self.manhattan
+    puts ingredients_and_quantity("Manhattan")
+    puts ""
+    puts instructions("Manhattan")
+  end
+
+  def self.algonquin
+    puts ingredients_and_quantity("Algonquin")
+    puts ""
+    puts instructions("Algonquin")
+  end
+
+  def self.allegheny
+    puts ingredients_and_quantity("Allegheny")
+    puts ""
+    puts instructions("Allegheny")
+  end
+
+  def self.daiquiri
+    puts ingredients_and_quantity("Daiquiri")
+    puts ""
+    puts instructions("Daiquiri")
+  end
+
+  def self.old_fashioned
+    puts ingredients_and_quantity("Old Fashioned")
+    puts ""
+    puts instructions("Old Fashioned")
+  end
+
   def self.vodka
     selection = select_spirit_and_name("odka")
     choice = "Here are your choices!"
@@ -36,9 +97,7 @@ class Drink < ActiveRecord::Base
     case response
       when "Long Island Tea"
         system "clear"
-        puts ingredients_and_quantity("Long Island Tea")
-        puts ""
-        puts instructions("Long Island Tea")
+        long_island_tea
       when "Moscow Mule"
         system "clear"
         puts ingredients_and_quantity("Moscow Mule")
@@ -63,24 +122,16 @@ class Drink < ActiveRecord::Base
     case response
       when "Long Island Tea"
         system "clear"
-        puts ingredients_and_quantity("Long Island Tea")
-        puts ""
-        puts instructions("Long Island Tea")
+        long_island_tea
       when "Negroni"
         system "clear"
-        puts ingredients_and_quantity("Negroni")
-        puts ""
-        puts instructions("Negroni")
+        negroni
       when "Dry Martini"
         system "clear"
-        puts ingredients_and_quantity("Dry Martini")
-        puts ""
-        puts instructions("Dry Martini")
+        dry_martini
       when "Alabama Slammer"
         system "clear"
-        puts ingredients_and_quantity("Alabama Slammer")
-        puts ""
-        puts instructions("Alabama Slammer")
+        alabama_slammer
       when "Alaska Cocktail"
         system "clear"
         puts ingredients_and_quantity("Alaska Cocktail")
@@ -110,14 +161,10 @@ class Drink < ActiveRecord::Base
     case response
       when "Long Island Tea"
         system "clear"
-        puts ingredients_and_quantity("Long Island Tea")
-        puts ""
-        puts instructions("Long Island Tea")
+        long_island_tea
       when "Margarita"
         system "clear"
-        puts ingredients_and_quantity("Margarita")
-        puts ""
-        puts instructions("Margarita")
+        margarita
     end
     puts ""
     Application.exit_option
@@ -132,29 +179,19 @@ class Drink < ActiveRecord::Base
     case response
       when "Negroni"
         system "clear"
-        puts ingredients_and_quantity("Negroni")
-        puts ""
-        puts instructions("Negroni")
+        negroni
       when "Dry Martini"
         system "clear"
-        puts ingredients_and_quantity("Dry Martini")
-        puts ""
-        puts instructions("Dry Martini")
+        dry_martini
       when "Manhattan"
         system "clear"
-        puts ingredients_and_quantity("Manhattan")
-        puts ""
-        puts instructions("Manhattan")
+        manhattan
       when "Algonquin"
         system "clear"
-        puts ingredients_and_quantity("Algonquin")
-        puts ""
-        puts instructions("Algonquin")
+        algonquin
       when "Allegheny"
         system "clear"
-        puts ingredients_and_quantity("Allegheny")
-        puts ""
-        puts instructions("Allegheny")
+        allegheny
       when "Allies Cocktail"
         system "clear"
         puts ingredients_and_quantity("Allies Cocktail")
@@ -179,14 +216,10 @@ class Drink < ActiveRecord::Base
         puts instructions("Mojito")
       when "Long Island Tea"
         system "clear"
-        puts ingredients_and_quantity("Long Island Tea")
-        puts ""
-        puts instructions("Long Island Tea")
+        long_island_tea
       when "Daiquiri"
         system "clear"
-        puts ingredients_and_quantity("Daiquiri")
-        puts ""
-        puts instructions("Daiquiri")
+        daiquiri
     end
     puts ""
     Application.exit_option
@@ -205,9 +238,7 @@ class Drink < ActiveRecord::Base
     case response
       when "Old Fashioned"
         system "clear"
-        puts ingredients_and_quantity("Old Fashioned")
-        puts ""
-        puts instructions("Old Fashioned")
+        old_fashioned
       when "Whiskey Sour"
         system "clear"
         puts ingredients_and_quantity("Whiskey Sour")
@@ -215,9 +246,7 @@ class Drink < ActiveRecord::Base
         puts instructions("Whiskey Sour")
       when "Manhattan"
         system "clear"
-        puts ingredients_and_quantity("Manhattan")
-        puts ""
-        puts instructions("Manhattan")
+        manhattan
       when "After Dinner Cocktail"
         system "clear"
         puts ingredients_and_quantity("After Dinner Cocktail")
@@ -230,9 +259,7 @@ class Drink < ActiveRecord::Base
         puts instructions("After Supper Cocktail")
       when "Alabama Slammer"
         system "clear"
-        puts ingredients_and_quantity("Alabama Slammer")
-        puts ""
-        puts instructions("Alabama Slammer")
+        alabama_slammer
       when "Brandy Alexander"
         system "clear"
         puts ingredients_and_quantity("Brandy Alexander")
@@ -240,14 +267,35 @@ class Drink < ActiveRecord::Base
         puts instructions("Brandy Alexander")
       when "Algonquin"
         system "clear"
-        puts ingredients_and_quantity("Algonquin")
-        puts ""
-        puts instructions("Algonquin")
+        algonquin
       when "Allegheny"
         system "clear"
-        puts ingredients_and_quantity("Allegheny")
-        puts ""
-        puts instructions("Allegheny")
+        allegheny
+    end
+    puts ""
+    Application.exit_option
+  end
+
+  def self.recommended
+    selection = ["Long Island Tea", "Dry Martini", "Margarita", "Daiquiri", "Old Fashioned"]
+    response = @@prompt.select("There are the recommended drinks!".yellow, selection)
+
+    case response
+      when "Long Island Tea"
+        system "clear"
+        long_island_tea
+      when "Dry Martini"
+        system "clear"
+        dry_martini
+      when "Margarita"
+        system "clear"
+        margarita
+      when "Daiquiri"
+        system "clear"
+        daiquiri
+      when "Old Fashioned"
+        system "clear"
+        old_fashioned
     end
     puts ""
     Application.exit_option

@@ -11,7 +11,7 @@ class Application
     def self.age_confirmation
         puts "Welcome to the Cocktail Library!!!"
         
-        response = @@prompt.select("Are you at least 21 years old age?", ["Yes", "No"])
+        response = @@prompt.select("Are you at least 21 years old age?".red, ["Yes", "No"])
     
         if response == "Yes"
             system "clear"
@@ -27,27 +27,42 @@ class Application
         @@username = gets.chomp
     end
 
+    def self.main_page
+        output = ["Recommended",
+                    "Spirits",
+                    "Exit"]
+
+        response = @@prompt.select("What would you like to select?", output)
+
+        case response
+            when "Recommended"
+                system "clear"
+                Drink.recommended
+            when "Spirits"
+                system "clear"
+                menu
+            else
+                system "clear"
+                exit_option
+        end
+    end
+    
     def self.menu
-        tty_prompt
-
         puts "Come look at our cocktail selection!!!"
-
-        choice = "Pick your poison!".green
 
         output = ["Vodka",  
                     "Gin", 
                 "Whiskey", 
                 "Tequila", 
                     "Rum", 
-                "Vermouth",
-                "Recommended", 
+                "Vermouth", 
                     "Exit"]
 
-        response = @@prompt.select(choice, output, active_color: :cyan)
+        response = @@prompt.select("Pick your poison!".green, output, active_color: :cyan)
         case response
             when "Vodka"
                 system "clear"
-                # system("imgcat ./pics/alexander.jpg")
+                system("imgcat ./pics/Vodka.jpeg")
                 Drink.vodka
             when "Gin"
                 system "clear"
@@ -64,11 +79,6 @@ class Application
             when "Vermouth"
                 system "clear"
                 Drink.vermouth
-            when "Recommended"
-                system "clear"
-                puts Drink.all.map(&:name).sample(5)
-                puts ""
-                exit_option
             else
                 system "clear"
                 exit_option
@@ -77,13 +87,13 @@ class Application
 
     def self.exit_option
         option = ["Yes", "No"]
-        response = @@prompt.select("Would you like to return to the main Menu?", option, active_color: :red)
+        response = @@prompt.select("Would you like to exit the Cocktail Librabry?", option, active_color: :red)
         if response == "Yes"
             system "clear"
-            menu
+            abort ("Thank you for visiting the Cocktail Library!")
         else
             system "clear"
-            abort ("Thank you for visiting the Cocktail Library!")
+            main_menu
         end
-    end    
+    end
 end
