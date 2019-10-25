@@ -1,8 +1,10 @@
 class Drink < ActiveRecord::Base
   has_many :drink_ingredient
+  has_many :favorite
   has_many :ingredient, through: :drink_ingredient
+  has_many :drink, through: :favorite
 
-  @@prompt = TTY::Prompt.new
+  @@prompt = TTY::Prompt.new(symbols: {marker: '🍸'})
 
   def self.tty_prompt
     @@prompt
@@ -243,8 +245,9 @@ class Drink < ActiveRecord::Base
 
   def self.whiskey
     whiskey_drink = DrinkIngredient.all.select do |drink| 
-      drink.ingredient.name.include?("Whiskey") || drink.ingredient.name.include?("Brandy") || drink.ingredient.name.include?("Bourbon") 
+      drink.ingredient.name.include?("Whiskey") || drink.ingredient.name.include?("Brandy") || drink.ingredient.name.include?("Bourbon")
     end
+
     selection = whiskey_drink.map{|drink_name| drink_name.drink.name}
     choice = "Here are your choices!"
     
@@ -329,5 +332,4 @@ class Drink < ActiveRecord::Base
     pid = fork{exec 'killall', "afplay"}
     sleep(0.01)
   end
-  
 end

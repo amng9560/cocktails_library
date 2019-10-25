@@ -1,4 +1,6 @@
-Welcome to the Cocktail Library. We have 20 popular drinks that you can select from depending on which spirit you want to drink!
+Welcome to the Cocktail Library (aka your virtual speak easy). We have 20 popular drinks that you can select from depending on which spirit you want to drink!
+
+You have your choices of mixed cocktails that have Vodka, Gin, Whiskey, Rum, Vermouth, or Tequila.
 
 1. Gems needed for this project
     -gem "activerecord"
@@ -17,5 +19,3 @@ Welcome to the Cocktail Library. We have 20 popular drinks that you can select f
 4. Install imgcat by entering into ITerm2 "npm install -g imgcat-cli". This will install imgcat globally. 
 
 In order to run this file, enter into ITerm 2 ruby bin/run.rb
-
-You have your choices Vodka, Gin, Whiskey, Rum, Vermouth, and Tequila.
