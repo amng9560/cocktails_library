@@ -12,12 +12,12 @@ cocktail_list = JSON.parse(url)
 
 #drinks#
 
-mojito = Drink.create(name: "Mojito", instructions: "Muddle mint leaves with sugar and lime juice.\nAdd a splash of soda water and fill the glass with cracked ice.\nPour the rum and top with soda water. Garnish and serve with straw.")
-old_fashioned = Drink.create(name: "Old Fashioned", instructions: "Place sugar cube in old fashioned glass\nand saturate with bitters, add a dash of plain water./n Muddle until dissolved.\nFill the glass with ice cubes and add whiskey.\nGarnish with orange twist,\nand a cocktail cherry.")
-long_island_tea = Drink.create(name: "Long Island Tea", instructions: "Combine all ingredients (except cola)\nand pour over ice in a highball glass. \nAdd the splash of cola for color. \nDecorate with a slice of lemon and serve.")
+mojito = Drink.create(name: "Mojito", instructions: "Muddle mint leaves with sugar and lime juice.\nAdd a splash of soda water and fill the glass with cracked ice.\nPour the rum and top with soda water.\nGarnish and serve with straw.")
+old_fashioned = Drink.create(name: "Old Fashioned", instructions: "Place sugar cube in old fashioned glass\nand saturate with bitters, add a dash of plain water.\nMuddle until dissolved.\nFill the glass with ice cubes and add whiskey.\nGarnish with orange twist,\nand a cocktail cherry.")
+long_island_tea = Drink.create(name: "Long Island Tea", instructions: "Combine all ingredients (except cola)\nand pour over ice in a highball glass.\nAdd the splash of cola for color.\nDecorate with a slice of lemon and serve.")
 negroni = Drink.create(name: "Negroni", instructions: "Stir into glass over ice,\ngarnish and serve.")
-whiskey_sour = Drink.create(name: "Whiskey Sour", instructions: "Shake with ice. Strain into chilled glass,\n garnish and serve.\nIf served 'On the rocks',\nstrain ingredients into old-fashioned glass filled with ice.")
-dry_martini = Drink.create(name: "Dry Martini", instructions: "Straight: Pour all ingredients into mixing glass with ice cubes.\n Stir well.\n Strain in chilled martini cocktail glass.\nSqueeze oil from lemon peel onto the drink,\nor garnish with olive.")
+whiskey_sour = Drink.create(name: "Whiskey Sour", instructions: "Shake with ice. Strain into chilled glass,\ngarnish and serve.\nIf served 'On the rocks',\nstrain ingredients into old-fashioned glass filled with ice.")
+dry_martini = Drink.create(name: "Dry Martini", instructions: "Straight: Pour all ingredients into mixing glass with ice cubes.\nStir well.\nStrain in chilled martini cocktail glass.\nSqueeze oil from lemon peel onto the drink,\nor garnish with olive.")
 daiquiri = Drink.create(name: "Daiquiri", instructions: "Pour all ingredients into shaker with ice cubes. \n Shake well. Strain in chilled cocktail glass.")
 margarita = Drink.create(name: "Margarita", instructions: "Rub the rim of the glass with the lime slice to make the salt stick to it.\nTake care to moisten only the outer rim and sprinkle the salt on it.\nThe salt should present to the lips of the imbiber\nand never mix into the cocktail.\nShake the other ingredients with ice,\nthen carefully pour into the glass.")
 manhattan = Drink.create(name: "Manhattan", instructions: "Stirred over ice,\nstrained into a chilled glass,\ngarnished, and served up.")

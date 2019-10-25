@@ -96,6 +96,7 @@ class Drink < ActiveRecord::Base
   end
 
   def self.allies_cocktail
+    system("imgcat ./lib/pics/allies_cocktail.jpg")
     puts ingredients_and_quantity("Allies Cocktail")
     puts ""
     puts instructions("Allies Cocktail")
