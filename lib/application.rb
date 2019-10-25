@@ -18,6 +18,7 @@ class Application
         else 
             system "clear"
             puts "You're not old enough!"
+            system("imgcat ./lib/pics/police_picture.jpg")
             Drink.stop_music
             exit
         end
@@ -91,6 +92,7 @@ class Application
         if response == "Yes"
             system "clear"
             Drink.stop_music
+            system("imgcat ./lib/pics/barfing_pumpkin.jpg")
             abort ("Thank you for visiting the Cocktail Library!")
         else
             system "clear"
