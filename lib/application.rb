@@ -16,6 +16,7 @@ class Application
     
         if response == "Yes"
             system "clear"
+            enter_username 
         else 
             system "clear"
             puts "You're not old enough!"
@@ -29,9 +30,18 @@ class Application
             response = @@prompt.select("Sign-in or Log in?", ["Sign-in!", "Log in!"], active_color: :magenta)
         
             if response == "Sign-in!"
-                user = @@prompt.ask("What is your name?")
-                User.create(name: user)
-            else 
+                puts 'Enter Username'
+                username = gets.chomp
+                user = User.new(name: username)
+                    if user.valid?
+                        User.create(name: user)
+                        puts "Come look at our cocktail selection!!!"
+                        start_animation
+                    else
+                        puts "User has been taken"
+                        enter_username
+                    end
+            else response == "Log in"
                 user = @@prompt.select("Select your User Name:", User.all.map(&:name))
             end 
         @user = User.find_by(name: user)
@@ -83,22 +93,16 @@ class Application
         response = @@prompt.select("Pick your poison!".green, output, active_color: :cyan)
         case response
             when "Vodka"
-                #system("imgcat ./lib/pics/vodka.png")
                 Drink.vodka
             when "Gin"
-                #system("imgcat ./lib/pics/gin.png")
                 Drink.gin
             when "Whiskey"
-                #system("imgcat ./lib/pics/whiskey.jpg")
                 Drink.whiskey
             when "Tequila"
-                #system("imgcat ./lib/pics/tequila.png")
                 Drink.tequila
             when "Rum"
-                #system("imgcat ./lib/pics/rum.png")
                 Drink.rum
             when "Vermouth"
-                #system("imgcat ./lib/pics/vermouth.png")
                 Drink.vermouth
             else
                 system "clear"

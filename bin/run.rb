@@ -10,8 +10,4 @@ opening_title
 system "clear"
 Application.age_confirmation
 system "clear"
-Application.enter_username
-system "clear"
-start_animation
-system "clear"
 Application.main_page
