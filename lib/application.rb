@@ -12,7 +12,7 @@ class Application
     def self.age_confirmation
         puts "Welcome to the Cocktail Library!!!"
         
-        response = @@prompt.select("Are you at least 21 years old age?".red, ["Yes", "No"])
+        response = @@prompt.select("Are you at least 21 years old?".red, ["Yes", "No"])
     
         if response == "Yes"
             system "clear"
@@ -27,16 +27,15 @@ class Application
     end
       
     def self.enter_username
-            response = @@prompt.select("Sign-in or Log in?", ["Sign-in!", "Log in!"], active_color: :magenta)
+            response = @@prompt.select("Sign-up or Log in?", ["Sign-up!", "Log in!"], active_color: :magenta)
         
-            if response == "Sign-in!"
+            if response == "Sign-up!"
                 puts 'Enter Username'
                 username = gets.chomp
                 user = User.new(name: username)
                     if user.valid?
                         User.create(name: user)
                         puts "Come look at our cocktail selection!!!"
-                        start_animation
                     else
                         puts "User has been taken"
                         enter_username
@@ -45,6 +44,10 @@ class Application
                 user = @@prompt.select("Select your User Name:", User.all.map(&:name))
             end 
         @user = User.find_by(name: user)
+        system "clear"
+        start_animation
+        system "clear"
+        main_page
     end
 
      def self.current_user

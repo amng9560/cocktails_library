@@ -9,5 +9,3 @@ Drink.starting_music
 opening_title
 system "clear"
 Application.age_confirmation
-system "clear"
-Application.main_page

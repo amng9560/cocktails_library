@@ -1,5 +1,7 @@
 Welcome to the Cocktail Library (aka your virtual speak easy). We have 20 popular drinks that you can select from depending on which spirit you want to drink!
 
+![Cocktail Library](https://static.thatsup.co/content/img/article/17/dec/gamla-stans-b%C3%A4sta-barer.jpg)
+
 You have your choices of mixed cocktails that have Vodka, Gin, Whiskey, Rum, Vermouth, or Tequila.
 
 1. Gems needed for this project
@@ -19,3 +21,5 @@ You have your choices of mixed cocktails that have Vodka, Gin, Whiskey, Rum, Ver
 4. Install imgcat by entering into ITerm2 "npm install -g imgcat-cli". This will install imgcat globally. 
 
 In order to run this file, enter into ITerm 2 ruby bin/run.rb
+
+youtube link: https://youtu.be/t1NYO0e3pQE
