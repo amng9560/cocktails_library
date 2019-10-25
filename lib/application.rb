@@ -13,7 +13,7 @@ class Application
     
         if response == "Yes"
             system "clear"
-            puts "Come look at our cocktail selection!!!"
+            enter_username 
         else 
             system "clear"
             puts "You're not old enough!"
@@ -25,13 +25,20 @@ class Application
       
     def self.enter_username
         puts 'Enter Username'
-        @@username = gets.chomp
+        username = gets.chomp
+        user = User.new(name: username)
+        if user.valid?
+            user.save 
+            puts "Come look at our cocktail selection!!!"
+            menu
+        else 
+           puts "User has been taken"
+           enter_username
+        end
+
     end
-
    
 
-   
-   
     def self.menu
         tty_prompt
 
