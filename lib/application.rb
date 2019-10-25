@@ -1,9 +1,10 @@
 class Application
+    attr_reader :user
+    @@prompt = TTY::Prompt.new(symbols: {marker: '🍸'})
 
-    @@prompt = TTY::Prompt.new
-
-    @@username = nil
-
+    def initialize(user)
+        @user = nil
+    end
     def self.tty_prompt
         @@prompt
     end
@@ -25,12 +26,25 @@ class Application
     end
       
     def self.enter_username
-        puts 'Enter Username'
-        @@username = gets.chomp
+            response = @@prompt.select("Sign-in or Log in?", ["Sign-in!", "Log in!"], active_color: :magenta)
+        
+            if response == "Sign-in!"
+                user = @@prompt.ask("What is your name?")
+                User.create(name: user)
+            else 
+                user = @@prompt.select("Select your User Name:", User.all.map(&:name))
+            end 
+        @user = User.find_by(name: user)
     end
+
+     def self.current_user
+        @user
+     end
 
     def self.main_page
         output = ["Recommended",
+                    "Add to Favorites",
+                    "Favorites",
                     "Spirits",
                     "Exit"]
 
@@ -40,6 +54,12 @@ class Application
             when "Recommended"
                 system "clear"
                 Drink.recommended
+            when "Add to Favorites"
+                system "clear"
+                Favorite.add_favorite
+            when "Favorites"
+                system "clear"
+                Favorite.see_favorites
             when "Spirits"
                 system "clear"
                 menu
@@ -93,7 +113,7 @@ class Application
             system "clear"
             Drink.stop_music
             system("imgcat ./lib/pics/barfing_pumpkin.jpg")
-            abort ("Thank you for visiting the Cocktail Library!")
+            abort ("Thank you for visiting the Cocktail Library!".yellow)
         else
             system "clear"
             main_page
