@@ -85,101 +85,82 @@ ice = Ingredient.create(name: "Ice", alcohol?: false)
 
 #drink_ingredients#
 
-#mojito
+
 DrinkIngredient.create(drink: mojito, ingredient: light_rum, quantity: "2-3 oz ")
 DrinkIngredient.create(drink: mojito, ingredient: lime, quantity: "Juice of mojito ")
 DrinkIngredient.create(drink: mojito, ingredient: sugar, quantity: "2 tsp ")
 DrinkIngredient.create(drink: mojito, ingredient: mint, quantity:"2-4")
 DrinkIngredient.create(drink: mojito, ingredient: soda_water, quantity: "2-3 oz")
-#old fashion
 DrinkIngredient.create(drink: old_fashioned, ingredient: bourbon, quantity: "4.5 cL")
 DrinkIngredient.create(drink: old_fashioned, ingredient: angostura_bitter, quantity: "old_fashioned dashes")
 DrinkIngredient.create(drink: old_fashioned, ingredient: sugar, quantity: "1 cube")
 DrinkIngredient.create(drink: old_fashioned, ingredient: water, quantity: "dash")
-#long island tea
 DrinkIngredient.create(drink: long_island_tea, ingredient: vodka, quantity: "1/2 oz")
 DrinkIngredient.create(drink: long_island_tea, ingredient: light_rum, quantity: "1/2 oz")
 DrinkIngredient.create(drink: long_island_tea, ingredient: gin, quantity: "1/2 oz")
 DrinkIngredient.create(drink: long_island_tea, ingredient: tequila, quantity:"1/2 oz")
 DrinkIngredient.create(drink: long_island_tea, ingredient: lemon, quantity: "Juice of 1/2")
 DrinkIngredient.create(drink: long_island_tea, ingredient: coca_cola, quantity: "1 splash")
-#negroni
 DrinkIngredient.create(drink: negroni, ingredient: gin, quantity: "1 oz")
 DrinkIngredient.create(drink: negroni, ingredient: campari, quantity: "1 oz")
 DrinkIngredient.create(drink: negroni, ingredient: sweet_vermouth, quantity: "1 oz")
-#Whiskey Sour
 DrinkIngredient.create(drink: whiskey_sour, ingredient: blended_whiskey, quantity: "2 oz ")
 DrinkIngredient.create(drink: whiskey_sour, ingredient: lemon, quantity: "Juice of 1/2 ")
 DrinkIngredient.create(drink: whiskey_sour, ingredient: powdered_sugar, quantity: "1/2 tsp ")
 DrinkIngredient.create(drink: whiskey_sour, ingredient: cherry, quantity: "1 ")
 DrinkIngredient.create(drink: whiskey_sour, ingredient: lemon, quantity: "1/2 slice ")
-#dry martini
 DrinkIngredient.create(drink: dry_martini, ingredient: gin, quantity: "1 2/3 oz")
 DrinkIngredient.create(drink: dry_martini, ingredient: dry_vermouth, quantity: "1/3 oz")
 DrinkIngredient.create(drink: dry_martini, ingredient: olive, quantity:"1")
-#Daiquiri
 DrinkIngredient.create(drink: daiquiri, ingredient: light_rum, quantity: "1 1/2 oz")
 DrinkIngredient.create(drink: daiquiri, ingredient: lime, quantity: "Juice of 1/2")
 DrinkIngredient.create(drink: daiquiri, ingredient: powdered_sugar, quantity: "1 tsp")
-#margarita
 DrinkIngredient.create(drink: margarita, ingredient: tequila, quantity: "1 1/2 oz ")
 DrinkIngredient.create(drink: margarita, ingredient: triple_sec, quantity: "1/2 oz ")
 DrinkIngredient.create(drink: margarita, ingredient: lime_juice, quantity: "1 oz ")
 DrinkIngredient.create(drink: margarita, ingredient: salt, quantity: "On the rim")
-#manhattan
 DrinkIngredient.create(drink: manhattan, ingredient: sweet_vermouth, quantity: "3/4 oz")
 DrinkIngredient.create(drink: manhattan, ingredient: bourbon, quantity: "2 1/2 oz Blended")
 DrinkIngredient.create(drink: manhattan, ingredient: angostura_bitter, quantity: "dash")
 DrinkIngredient.create(drink: manhattan, ingredient: ice, quantity: "2 or 3")
 DrinkIngredient.create(drink: manhattan, ingredient: maraschino_cherry, quantity: "1")
 DrinkIngredient.create(drink: manhattan, ingredient: orange_peel, quantity:"1 twist")
-#moscow mule
 DrinkIngredient.create(drink: moscow_mule, ingredient: vodka, quantity: "2 oz")
 DrinkIngredient.create(drink: moscow_mule, ingredient: lime_juice, quantity:"2 oz")
 DrinkIngredient.create(drink: moscow_mule, ingredient: ginger_ale, quantity: "8 oz")
-#After Dinner Cocktail
 DrinkIngredient.create(drink: after_dinner_cocktail, ingredient: apricot_brandy, quantity: "1 oz")
 DrinkIngredient.create(drink: after_dinner_cocktail, ingredient: triple_sec, quantity: "1 oz")
 DrinkIngredient.create(drink: after_dinner_cocktail, ingredient: lime, quantity: "1 juiced")
-#After Supper Cocktail"
 DrinkIngredient.create(drink: after_supper_cocktail, ingredient: triple_sec, quantity: "1 oz")
 DrinkIngredient.create(drink: after_supper_cocktail, ingredient: apricot_brandy, quantity: "1 oz")
 DrinkIngredient.create(drink: after_supper_cocktail, ingredient: lemon_juice, quantity: "1/2 tsp")
-#Alabama Slammer
 DrinkIngredient.create(drink: alabama_slammer, ingredient: southern_comfort, quantity: "1 oz")
 DrinkIngredient.create(drink: alabama_slammer, ingredient: amaretto, quantity: "1 oz")
 DrinkIngredient.create(drink: alabama_slammer, ingredient: sloe_gin, quantity: "1/2 oz")
 DrinkIngredient.create(drink: alabama_slammer, ingredient: lemon_juice, quantity: "1 dash")
-#Alaska Cocktail
 DrinkIngredient.create(drink: alaska_cocktail, ingredient: orange_bitter, quantity: "2 dashes")
 DrinkIngredient.create(drink: alaska_cocktail, ingredient: gin, quantity: "1 1/2 oz")
 DrinkIngredient.create(drink: alaska_cocktail, ingredient: yellow_chartreuse, quantity: "3/4 oz")
 DrinkIngredient.create(drink: alaska_cocktail, ingredient: lemon_peel, quantity: "1 twist")
-#Alexander
 DrinkIngredient.create(drink: alexander, ingredient: gin, quantity: "1/2 oz")
 DrinkIngredient.create(drink: alexander, ingredient: creme_de_cacao, quantity: "1/2 oz white")
 DrinkIngredient.create(drink: alexander, ingredient: light_cream, quantity: "2 oz")
 DrinkIngredient.create(drink: alexander, ingredient: nutmeg, quantity: "Garnish")
-#Brandy Alexander
 DrinkIngredient.create(drink: brandy_alexander, ingredient: brandy, quantity: "1 oz")
 DrinkIngredient.create(drink: brandy_alexander, ingredient: creme_de_cacao, quantity: "1 oz")
 DrinkIngredient.create(drink: brandy_alexander, ingredient: light_cream, quantity: "1 oz")
 DrinkIngredient.create(drink: brandy_alexander, ingredient: nutmeg, quantity: "Garnish")
-#Alfie Cocktail
 DrinkIngredient.create(drink: alfie_cocktail, ingredient: lemon_vodka, quantity: "1 1/2 oz")
 DrinkIngredient.create(drink: alfie_cocktail, ingredient: triple_sec, quantity: "1 dash")
 DrinkIngredient.create(drink: alfie_cocktail, ingredient: pineapple_juice, quantity: "1 tblsp")
-#Algonquin
 DrinkIngredient.create(drink: algonquin, ingredient: blended_whiskey, quantity: "1 1/2 oz")
 DrinkIngredient.create(drink: algonquin, ingredient: dry_vermouth, quantity: "1 oz")
 DrinkIngredient.create(drink: algonquin, ingredient: pineapple_juice, quantity: "1 oz")
-#Allegheny
 DrinkIngredient.create(drink: allegheny, ingredient: dry_vermouth, quantity: "1 oz")
 DrinkIngredient.create(drink: allegheny, ingredient: bourbon, quantity: "1 oz")
 DrinkIngredient.create(drink: allegheny, ingredient: blackberry_brandy, quantity: "1 1/2 tsp")
 DrinkIngredient.create(drink: allegheny, ingredient: lemon_juice, quantity: "1 1/2 tsp")
 DrinkIngredient.create(drink: allegheny, ingredient: lemon_peel, quantity: "1 twist")
-#Allies Cocktail
 DrinkIngredient.create(drink: allies_cocktail, ingredient: dry_vermouth, quantity: "1 oz")
 DrinkIngredient.create(drink: allies_cocktail, ingredient: gin, quantity: "1 oz")
 DrinkIngredient.create(drink: allies_cocktail, ingredient: kummel, quantity: "1/2 tsp")

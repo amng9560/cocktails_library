@@ -33,13 +33,15 @@ class Application
                 puts 'Enter Username'
                 username = gets.chomp
                 user = User.new(name: username)
-                    if user.valid?
-                        User.create(name: user)
-                        puts "Come look at our cocktail selection!!!"
-                    else
-                        puts "User has been taken"
-                        enter_username
-                    end
+
+                if user.valid?
+                    User.create(name: user)
+                    puts "Come look at our cocktail selection!!!"
+                else
+                    puts "User has been taken"
+                    enter_username
+                end
+                
             else response == "Log in"
                 user = @@prompt.select("Select your User Name:", User.all.map(&:name))
             end 
@@ -55,11 +57,13 @@ class Application
      end
 
     def self.main_page
-        output = ["Recommended",
-                    "Add to Favorites",
-                    "Favorites",
-                    "Spirits",
-                    "Exit"]
+        output = [
+            "Recommended",
+            "Add to Favorites",
+            "Favorites",
+            "Spirits",
+            "Exit"
+        ]
 
         response = @@prompt.select("What would you like to select?", output)
 
@@ -85,13 +89,15 @@ class Application
     def self.menu
         puts "Come look at our cocktail selection!!!"
 
-        output = ["Vodka",  
-                    "Gin", 
-                "Whiskey", 
-                "Tequila", 
-                    "Rum", 
-                "Vermouth", 
-                    "Exit"]
+        output = [
+            "Vodka",  
+            "Gin", 
+            "Whiskey", 
+            "Tequila", 
+            "Rum", 
+            "Vermouth", 
+            "Exit"
+        ]
 
         response = @@prompt.select("Pick your poison!".green, output, active_color: :cyan)
         case response
